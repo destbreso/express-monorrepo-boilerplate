@@ -1,0 +1,34 @@
+{
+  "name": "jsonplaceholder-express-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/backend-business",
+    "gen-swagger-file": "node scripts/gen-swagger-file > docs/openapi.json",
+    "gen-swagger-html": "sc generate -i docs/openapi.json -l html",
+    "gen-swagger-md": "widdershins docs/openapi.json -o docs/openapi.md"
+  },
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "cookie-parser": "1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.1",
+    "express": "4.18.1",
+    "express-jsdoc-swagger": "^1.6.8",
+    "express-winston": "^4.2.0",
+    "helmet": "^5.1.0",
+    "http-errors": "2.0.0",
+    "js-yaml": "^4.1.0",
+    "json-schema-ref-parser": "^9.0.9",
+    "json2yaml": "^1.1.0",
+    "morgan": "1.10.0",
+    "node-fetch": "^2.6.6",
+    "pug": "3.0.2",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-jsdoc-deref": "^1.1.0",
+    "swagger-ui-express": "^4.4.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "yamljs": "^0.3.0"
+  }
+}

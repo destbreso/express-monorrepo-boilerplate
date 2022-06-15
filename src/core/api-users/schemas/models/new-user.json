@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The user's name",
+      "minLength": 1,
+      "example": "John Doe"
+    },
+    "username": {
+      "type": "string",
+      "description": "The user's username",
+      "minLength": 1,
+      "example": "jdoe"
+    },
+    "email": {
+      "type": "string",
+      "description": "The user's email",
+      "minLength": 1,
+      "example": "jdoe@people.com"
+    },
+    "phone": {
+      "type": "string",
+      "description": "The user's phone number",
+      "minLength": 1,
+      "example": "555-555-5555"
+    },
+    "website": {
+      "type": "string",
+      "description": "The user's website",
+      "minLength": 1,
+      "example": "www.jdoe.com"
+    },
+    "age": {
+      "type": "integer",
+      "description": "The user's age",
+      "minimum": 0,
+      "example": 42
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The user's street address",
+          "minLength": 1,
+          "example": "123 Main St"
+        },
+        "city": {
+          "type": "string",
+          "description": "The user's city",
+          "minLength": 1,
+          "example": "Anytown"
+        },
+        "state": {
+          "type": "string",
+          "description": "The user's state",
+          "minLength": 1,
+          "example": "CA"
+        },
+        "zipcode": {
+          "type": "string",
+          "description": "The user's zip code",
+          "minLength": 1,
+          "example": "12345"
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number",
+              "description": "The user's latitude",
+              "minimum": -90,
+              "maximum": 90,
+              "example": 37.774929
+            },
+            "lng": {
+              "type": "number",
+              "description": "The user's longitude",
+              "minimum": -180,
+              "maximum": 180,
+              "example": -122.419416
+            }
+          }
+        },
+        "suite": {
+          "type": "string",
+          "description": "The user's suite number",
+          "minLength": 1,
+          "example": "Suite 123"
+        },
+        "company": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The user's company name",
+              "minLength": 1,
+              "example": "Acme Inc."
+            },
+            "catchPhrase": {
+              "type": "string",
+              "description": "The user's company catchphrase",
+              "minLength": 1,
+              "example": "We do things that make you happy"
+            },
+            "bs": {
+              "type": "string",
+              "description": "The user's company business statement",
+              "minLength": 1,
+              "example": "We do things that make you happy"
+            }
+          }
+        }
+      }
+    }
+  }
+}

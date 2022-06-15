@@ -1,0 +1,10 @@
+UserSearch:
+  $ref: "search.json"
+UserCreate:
+  $ref: "create.json"
+UserGetById:
+  $ref: "getById.json"
+UserUpdate:
+  $ref: "update.json"
+UserDelete:
+  $ref: "delete.json"

@@ -1,0 +1,187 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Swagger Monorepo with jsdoc and json schema",
+    "version": "1.0.0",
+    "description": "This is a Prove Of Concept API for Monorepo structure, with swagger integration and schema validation",
+    "license": {
+      "name": "MIT",
+      "url": ""
+    },
+    "contact": {
+      "name": "David Estevez",
+      "url": "",
+      "email": "destevezbreso@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "Development server"
+    },
+    {
+      "url": "http://localhost:3000/v1/",
+      "description": "Development server (v1)"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "summary": "Retrieve a list of JSONPlaceholder users.",
+        "description": "Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.",
+        "tags": [
+          "users"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/UserSearch"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a JSONPlaceholder user.",
+        "description": "Create a JSONPlaceholder user. Can be used to create a new user when prototyping or testing an API.",
+        "operationId": "createUser",
+        "tags": [
+          "users"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A single user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/UserCreate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Retrieve a single JSONPlaceholder user.",
+        "description": "Retrieve a single JSONPlaceholder user. Can be used to populate a user profile when prototyping or testing an API.",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Numeric ID of the user to retrieve.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/UserGetById"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a user by ID",
+        "description": "Update a user by ID",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Numeric ID of the user to retrieve.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/UserUpdate"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a user by ID",
+        "description": "Delete a user by ID",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Numeric ID of the user to retrieve.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/UserDelete"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "$ref": "./schemas/models/_index.yaml"
+    },
+    "parameters": {
+      "$ref": "./schemas/params/_index.yaml"
+    },
+    "requests": {
+      "$ref": "./schemas/req/_index.yaml"
+    },
+    "responses": {
+      "$ref": "./schemas/res/_index.yaml"
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,4 @@
+NewUser:
+  $ref: "new-user.json"
+User:
+  $ref: "user.json"

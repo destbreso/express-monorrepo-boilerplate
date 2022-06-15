@@ -1,0 +1,14 @@
+{
+  "schemas": {
+    "$ref": "./schemas/models/_index.yaml"
+  },
+  "parameters": {
+    "$ref": "./schemas/params/_index.yaml"
+  },
+  "requests": {
+    "$ref": "./schemas/req/_index.yaml"
+  },
+  "responses": {
+    "$ref": "./schemas/res/_index.yaml"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Swagger Monorepo with jsdoc and json schema",
+      "version": "1.0.0",
+      "description": "This is a Prove Of Concept API for Monorepo structure, with swagger integration and schema validation",
+      "license": {
+        "name": "MIT",
+        "url": ""
+      },
+      "contact": {
+        "name": "David Estevez",
+        "url": "",
+        "email": "destevezbreso@gmail.com"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/",
+        "description": "Development server"
+      }
+    ]
+  },
+  "apis": [
+    "./src/**/router*.js"
+  ]
+}
