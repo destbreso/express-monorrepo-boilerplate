@@ -1,15 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const users = require('./api-users')
 
-/**
- * @swagger
- * /index:
- *   get:
- *     summary: Get home page
- *     description: Get home page
-*/
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JSONPlaceholder Express API' });
-});
-
-module.exports = router;
+module.exports = {
+  users
+};

@@ -8,3 +8,5 @@ UserUpdate:
   $ref: "update.json"
 UserDelete:
   $ref: "delete.json"
+ErrorUnauthorized:
+  description: Access token is missing or invalid

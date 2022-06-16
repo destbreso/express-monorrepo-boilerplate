@@ -12,7 +12,7 @@ const createError = require('http-errors');
 const logger = require('./src/shared/logger/custom-logger').logger //require('morgan');
 const expressWinston = require('express-winston');
 
-const usersRouter = require('./src/core/api-users/index.js').router;
+const users = require('./src/core/api-users');
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.use(expressWinston.logger({
 }));
 
 
-app.use('/users', usersRouter);
+app.use('/users', users.router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

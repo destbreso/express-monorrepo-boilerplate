@@ -3,7 +3,6 @@ const YAMLParser = require('json2yaml')
 const swaggerJsondoc = require("swagger-jsdoc");
 const path = require('path');
 const fs = require('fs');
-const RefParser = require('json-schema-ref-parser')
 
 const outFileName = '_swagger.json';
 const swaggerComponentsFileName = '_swagger-components.json';
@@ -28,17 +27,6 @@ else {
 if (loader) {
   const swaggerConf = loader(swaggerDefinitionPath);
   const openapiSpecification = swaggerJsondoc(swaggerConf);
-
-  // RefParser.dereference(openapiSpecification, (err, schema) => {
-  //   if (err) {
-  //     console.error(err);
-  //   }
-  //   else {
-  //     // `schema` is just a normal JavaScript object that contains your entire JSON Schema,
-  //     // including referenced files, combined into a single object
-  //     console.log(schema);
-  //   }
-  // })
 
   const swaggerComponents = loader(path.join(basePath, swaggerComponentsFileName));
   openapiSpecification.components = swaggerComponents;

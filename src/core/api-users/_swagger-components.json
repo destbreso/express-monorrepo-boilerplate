@@ -10,5 +10,14 @@
   },
   "responses": {
     "$ref": "./schemas/res/_index.yaml"
+  },
+  "securitySchemes": {
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "in": "header",
+      "name": "Authorization",
+      "bearerFormat": "JWT"
+    }
   }
 }
