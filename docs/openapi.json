@@ -1,0 +1,1 @@
+Usage: node gen-swagger-file.js swagger-definition-path <swagger-output-path>
